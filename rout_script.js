@@ -14,6 +14,11 @@ function getLocation() {
             var marker = new L.marker(e.latlng);
             marker.addTo(map);
             var radius = e.accuracy;
+
+            document.getElementById('accuracy').innerHTML += "Accuracy: " + radius;
+            document.getElementById('coords').innerHTML += e.latlng.toString();
+            document.getElementById('time').innerHTML += new Date().toLocaleString();
+            
             L.circle(e.latlng, radius).addTo(map);
         });
 }
